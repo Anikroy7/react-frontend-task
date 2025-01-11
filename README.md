@@ -1,6 +1,4 @@
 
-![Logo](https://synesisit.com.bd/wp-content/uploads/bfi_thumb/synesis-it_black-01-3cnxnb2fli8plmawcwjd6yrbbx785tikrerr65856w2h3hp9g.png)
-
 
 # BLOG APPLICATION  
 This Blog Application contains a dynamic blog list and details pages with a consistent navigation bar. It fetches blog data using the provided API endpoint.
