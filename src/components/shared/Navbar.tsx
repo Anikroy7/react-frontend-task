@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { useNotification } from "../../context/NotificationContext";
 
 const Navbar = () => {
+
+    const { bellCount } = useNotification();
+
     return (
         <>
             <nav className="navbar bg-base-100 sticky top-0 z-40">
@@ -57,7 +61,7 @@ const Navbar = () => {
                                 className="h-5 w-5 text-gray-700"
                             />
                             <span className="absolute bottom-4 right-1 rounded-full px-1.5 py-0.5 font-bold">
-                                6
+                                {bellCount}
                             </span>
                         </div>
                         <div className="flex items-center justify-center gap-5 hidden md:flex">

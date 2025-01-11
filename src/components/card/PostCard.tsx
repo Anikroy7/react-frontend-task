@@ -1,13 +1,20 @@
-import { FiEye } from "react-icons/fi"; 
+import { FiEye } from "react-icons/fi";
 import { format, parse } from "date-fns";
 import { TPost } from "../../types";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useNotification } from "../../context/NotificationContext";
 
 export default function PostCard({ post }: { post: TPost }) {
-
-    const dateString = post.publishedAt.split(' ')[0]
+    const { incrementBellCount } = useNotification();
+    const dateString = post.publishedAt.split(' ')[0];
+    const navigate= useNavigate()
     const parsedDate = parse(dateString, "dd/MM/yyyy", new Date());
     const formattedDate = format(parsedDate, "MMMM dd, yyyy");
+
+    const handleBellCounter = (id:number) => {
+        incrementBellCount();
+        navigate(`/post/${id}`)
+    }
 
     return (
         <div className="max-w-sm mx-auto bg-[#F7F9F9] rounded-xl shadow-lg overflow-hidden relative">
@@ -34,7 +41,7 @@ export default function PostCard({ post }: { post: TPost }) {
                 </div>
                 <h2 className="text-2xl font-semibold text-gray-800 mt-2">{post.title.slice(0, 20)}</h2>
                 <p className="mt-2 text-gray-600 line-clamp-3">{
-                    post.content.length > 100 ? <span>`{post.content.slice(0, 100)}... <Link to={`/post/${post.id}`} className="text-blue-600 font-semibold cursor-pointer">Read more</Link></span> : post.content
+                    post.content.length > 100 ? <span>`{post.content.slice(0, 100)}... <span onClick={()=>handleBellCounter(post.id)} className="text-blue-600 font-semibold cursor-pointer">Read more</span></span> : post.content
                 }</p>
 
 
