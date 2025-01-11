@@ -1,50 +1,74 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Logo](https://synesisit.com.bd/wp-content/uploads/bfi_thumb/synesis-it_black-01-3cnxnb2fli8plmawcwjd6yrbbx785tikrerr65856w2h3hp9g.png)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# BLOG APPLICATION  
+This Blog Application contains a dynamic blog list and details pages with a consistent navigation bar. It fetches blog data using the provided API endpoint.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Logo on the left, "Sign In" & "Register" buttons on the right.
+- Notification bell counter updates on blog card details clicks.
+- Fullscreen mode
+- Full appliation responsive.
+- Displays title, image, excerpt, category, publication date, and a "Read More" button  dynamically.
+- Search blogs by title or keywords.
+- Automatically loads more blogs as users scroll.
+- dynamically rendered blogdetails page with newsletter and user review section.
+## Optimizations
 
-- Configure the top-level `parserOptions` property like this:
+What optimizations did you make in your code? E.g. refactors, performance improvements, accessibility
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+
+## Tech Stack
+
+**Client:** React, Tanstack query, TailwindCSS, DaisyUi
+
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone  https://github.com/Anikroy7/react-frontend-task.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Go to the project directory
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+  cd react-frontend-task
 ```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
+
+
+
+
+## Challenges & Insights
+One of the key challenges I faced was implementing infinite scrolling, as the backend API did not support query parameters like limit or page for paginated data retrieval. Instead, the API returned all the data at once. To address this, I devised a custom solution by dynamically managing data slicing and rendering on the frontend, ensuring a seamless user experience.
+
+## Feedback
+
+Completing this task was a great learning experience. It enhanced my problem-solving skills and allowed me to develop creative solutions while learning new techniques.
+
+
+
+
+
+
+
+## Authors
+
+- [@Anikroy7](https://github.com/Anikroy7)
+
