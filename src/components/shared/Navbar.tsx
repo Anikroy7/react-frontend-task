@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
@@ -34,11 +35,13 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div>
-                        <img
-                            src="https://synesisit.com.bd/wp-content/uploads/bfi_thumb/synesis-it_black-01-3cnxnb2fli8plmawcwjd6yrbbx785tikrerr65856w2h3hp9g.png"
-                            alt="Synesis IT Logo"
-                            className="h-16 w-auto"
-                        />
+                        <Link to={'/'}>
+                            <img
+                                src="https://synesisit.com.bd/wp-content/uploads/bfi_thumb/synesis-it_black-01-3cnxnb2fli8plmawcwjd6yrbbx785tikrerr65856w2h3hp9g.png"
+                                alt="Synesis IT Logo"
+                                className="h-16 w-auto"
+                            />
+                        </Link>
                     </div>
                 </div>
 

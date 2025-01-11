@@ -1,5 +1,5 @@
-import { useMutation } from "react-query";
-import getAllposts from "../services/post.service";
+import { useMutation, useQuery } from "react-query";
+import { getAllposts, getSinglePost } from "../services/post.service";
 
 export const useGetAllposts = () => {
   return useMutation<any, Error>({
@@ -14,3 +14,10 @@ export const useGetAllposts = () => {
     },
   });
 }
+
+export const useGetSinglePost = (postId: string) => {
+  return useQuery({
+    queryKey: ["GET_SINGLE_POST"],
+    queryFn: async () => await getSinglePost(postId),
+  });
+};

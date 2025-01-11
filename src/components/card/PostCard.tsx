@@ -1,6 +1,7 @@
 import { FiEye } from "react-icons/fi"; 
 import { format, parse } from "date-fns";
 import { TPost } from "../../types";
+import { Link } from "react-router-dom";
 
 export default function PostCard({ post }: { post: TPost }) {
 
@@ -33,7 +34,7 @@ export default function PostCard({ post }: { post: TPost }) {
                 </div>
                 <h2 className="text-2xl font-semibold text-gray-800 mt-2">{post.title.slice(0, 20)}</h2>
                 <p className="mt-2 text-gray-600 line-clamp-3">{
-                    post.content.length > 100 ? <span>`{post.content.slice(0, 100)}... <span className="text-blue-600 font-semibold cursor-pointer">Read more</span></span> : post.content
+                    post.content.length > 100 ? <span>`{post.content.slice(0, 100)}... <Link to={`/post/${post.id}`} className="text-blue-600 font-semibold cursor-pointer">Read more</Link></span> : post.content
                 }</p>
 
 
